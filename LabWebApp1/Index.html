@@ -1,0 +1,53 @@
+﻿
+<html ng-app="app">
+<head>
+    <title>LabTest</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <header ng-include="'partials/nav.html'"></header>
+
+    <div class="side-menu">
+        <div ng-include="'partials/menu.html'"></div>
+    </div>
+    <div ui-view></div>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-ui-router.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
+    <script src="Scripts/angular-local-storage.min.js"></script>
+    <script src="App/App.Config.js"></script>
+
+    <script src="App/Common/BaseService.js"></script>
+    <script src="App/Common/UrlService.js"></script>
+    <script src="App/Common/WebService.js"></script>
+    <script src="App/Common/CommandService.js"></script>
+    <script src="App/Common/QueryService.js"></script>
+    <script src="App/Common/ResponseModel.js"></script>
+    <script src="App/Common/RequestModel.js"></script>
+    <script src="App/Common/DropdownService.js"></script>
+    <script src="App/Common/SecutityLibrary.js"></script>
+    <script src="App/Common/SecurityService.js"></script>
+    <script src="App/Common/SecurityInterceptors.js"></script>
+    <script src="App/Common/SecurityController.js"></script>
+    <script src="App/Home/HomeController.js"></script>
+    <script src="App/Profile/ProfileController.js"></script>
+    <script src="App/Profile/Model.js"></script>
+    <script src="App/Menu/MenuController.js"></script>
+
+    <!--//test//-->
+
+    <script src="App/Student/StudentController.js"></script>
+    <script src="App/Student/Model.js"></script>
+    <script src="App/Student/StudentDetailController.js"></script>
+
+    <script src="App/Course/CourseController.js"></script>
+    <script src="App/Course/CourseQueryController.js"></script>
+    <script src="App/Course/Model.js"></script>
+
+    <script src="App/Payment/PaymentController.js"></script>
+    <script src="App/Payment/Model.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿
+
+<table style="border:1px solid black">
+    <tr>
+        <th>Name</th>
+        <th>Due</th>
+        <th>Paid Amount</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="p in vm.Models track by $index" g-click="vm.Select(p)">
+        <td>{{p.Student.Name}}&nbsp;&nbsp;</td>
+        <td>{{p.Student.Due}}&nbsp;&nbsp;</td>
+        <td>{{p.Amount}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            <a href="" ng-click="vm.Edit(p)">Pay</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="" ng-click="vm.Delete(p.ID)">Delete</a>
+        </td>
+    </tr>
+</table>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+
+            <form role="form" ng-submit="vm.Save()">
+
+                <div class="form-group">
+                    <label for="txtStdID">Name</label>
+                    <!--<input type="text" class="form-control" id="txtStdID" ng-model="vm.Model.Student.Name">-->
+                    <select class="form-control" ng-model="vm.Model.StudentId" ng-options="p.ID as p.Name for p in vm.Dropdown['student']" name="Course"></select><br />
+                </div>
+
+                <div class="form-group">
+                    <label for="txtAmount">Amount</label>
+                    <input type="text" class="form-control" id="txtAmount" ng-model="vm.Model.Amount">
+                </div>
+
+                <input type="submit" value="Save" />
+            </form>
+        </div>
+    </div>
+</div>

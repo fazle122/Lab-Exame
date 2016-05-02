@@ -1,0 +1,10 @@
+﻿<div ng-controller="NavController as vm">
+    <span ng-hide="vm.IsSignedIn" ui-sref="root.home">U r in Guest mood</span><br/>
+    <span ng-show="vm.IsSignedIn"><a href="" ui-sref="root.profile">{{vm.User.UserName}}</a></span><br/>
+    <spna ng-hide="vm.IsSignedIn" ui-sref="root.register"><a href="">Register</a></spna><br/>
+    <span ng-hide="vm.IsSignedIn" ui-sref="root.signin"><a href="" >Sign In</a></span><br/>
+    <spna ng-show="vm.IsSignedIn" ng-click="vm.Signout()"><a href="">Sign Out</a></spna>
+</div>
+
+
+

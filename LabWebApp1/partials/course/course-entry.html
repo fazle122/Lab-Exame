@@ -1,0 +1,26 @@
+﻿
+
+<h2>Enter A Course</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+
+            <form role="form" ng-submit="vm.Save()">
+
+                <div class="form-group">
+                    <label for="txtName">Name</label>
+                    <input type="text" class="form-control" id="txtName" ng-model="vm.Model.Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtFee">Fee</label>
+                    <input type="text" class="form-control" id="txtFee" ng-model="vm.Model.Fee">
+                </div>
+
+
+                <input type="submit" value="Save" />
+            </form>
+        </div>
+    </div>
+</div>

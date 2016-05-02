@@ -1,0 +1,42 @@
+﻿<h2>All Course Info</h2>
+
+
+<table style="border:1px solid black">
+    <tr>
+        <th>Name</th>
+        <th>Fee</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="p in vm.Models track by $index" >
+        <td>{{p.Name}}</td>
+        <td>{{p.Fee}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <!--<td>
+            <a href="" ng-click="vm.Edit(p)">Edit</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="" ng-click="vm.Delete(p.ID)">Delete</a>
+        </td>-->
+    </tr>
+</table>
+
+
+<!--<div class="col-md-6 col-xs-12">
+
+    <form role="form">
+
+        <div class="form-group">
+            <label for="txtName">Name</label>
+            <input type="text" class="form-control" id="txtName" ng-model="vm.Model.Name">
+        </div>
+
+        <div class="form-group">
+            <label for="txtFee">Fee</label>
+            <input type="text" class="form-control" id="txtFee" ng-model="vm.Model.Fee">
+        </div>
+
+        <input type="button" value="Update" ng-click="vm.Update()" />
+    </form>
+</div>-->
+
+
+
+

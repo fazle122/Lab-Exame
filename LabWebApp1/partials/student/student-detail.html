@@ -1,0 +1,71 @@
+﻿<h2>All Student Info</h2>
+
+<!--<input type="text" ng-model="vm.SearchRequest.Keyword" />
+<button ng-click="vm.Search()">Search</button>-->
+
+<table style="border:1px solid black">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Course</th>
+        <th>Due Money</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="p in vm.Models track by $index" ng-click="vm.Select(p)">
+        <td>{{p.Name}}</td>
+        <td>{{p.Age}}</td>
+        <td>{{p.Phone}}</td>
+        <td>{{p.Email}}</td>
+        <td>{{p.Address}}</td>
+        <td>{{p.Course.Name}}</td>
+        <td>{{p.Due}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            <a href="" ng-click="vm.Edit(p)">Edit</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="" ng-click="vm.Delete(p.ID)">Delete</a>
+        </td>
+    </tr>
+    
+</table>
+
+<p>Total Due : {{vm.TotalDue}}</p>
+
+
+<div class="col-md-6 col-xs-12">
+
+    <form role="form">
+
+        <div class="form-group">
+            <label for="txtName">Name</label>
+            <input type="text" class="form-control" id="txtName" ng-model="vm.Model.Name">
+        </div>
+
+        <div class="form-group">
+            <label for="txtAge">Age</label>
+            <input type="text" class="form-control" id="txtAge" ng-model="vm.Model.Age">
+        </div>
+
+        <div class="form-group">
+            <label for="txtPhone">Phone</label>
+            <input type="text" class="form-control" id="txtPhone" ng-model="vm.Model.Phone">
+        </div>
+
+        <div class="form-group">
+            <label for="txtEmail">Email</label>
+            <input type="text" class="form-control" id="txtEmail" ng-model="vm.Model.Email">
+        </div>
+
+        <div class="form-group">
+            <label for="txtAddress">Address</label>
+            <input type="text" class="form-control" id="txtAddress" ng-model="vm.Model.Address">
+        </div>
+
+        <input type="button" value="Update" ng-click="vm.Update()" />
+    </form>
+</div>
+
+
+
