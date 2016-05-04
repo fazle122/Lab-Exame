@@ -34,6 +34,20 @@
             self.Web.Post(self.Url.StudentEntryUrl, self.Model).then(successCallBack, errorCallBack);
         }
 
+        LoadDropdown(name: string): void {
+            var self = this;
+            var successCallback = (response: SearchResponse): void => {
+                console.log(response);
+                self.Dropdown[name] = response.Models;
+                console.log(self.Dropdown);
+            };
+            var errorCallback = (error: any): void => {
+                console.log(error);
+            };
+
+            self.DropdownService.Load(name).then(<any>successCallback, errorCallback);
+        }
+
 
 
     }

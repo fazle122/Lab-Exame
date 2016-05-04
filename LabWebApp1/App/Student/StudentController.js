@@ -19,6 +19,18 @@ var App;
             };
             self.Web.Post(self.Url.StudentEntryUrl, self.Model).then(successCallBack, errorCallBack);
         };
+        StudentController.prototype.LoadDropdown = function (name) {
+            var self = this;
+            var successCallback = function (response) {
+                console.log(response);
+                self.Dropdown[name] = response.Models;
+                console.log(self.Dropdown);
+            };
+            var errorCallback = function (error) {
+                console.log(error);
+            };
+            self.DropdownService.Load(name).then(successCallback, errorCallback);
+        };
         StudentController.$inject = ["CommandService", "UrlService", "WebService", "DropdownService"];
         return StudentController;
     })();
