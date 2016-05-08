@@ -52,3 +52,4 @@ var App;
     App.CommandService = CommandService;
     angular.module("app").service("CommandService", CommandService);
 })(App || (App = {}));
+//# sourceMappingURL=CommandService.js.map

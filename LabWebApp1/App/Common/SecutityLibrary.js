@@ -40,3 +40,4 @@ var App;
     })(App.BaseResponse);
     App.RegisterResponse = RegisterResponse;
 })(App || (App = {}));
+//# sourceMappingURL=SecutityLibrary.js.map

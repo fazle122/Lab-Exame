@@ -14,3 +14,4 @@ var App;
     })(App.Entity);
     App.Payment = Payment;
 })(App || (App = {}));
+//# sourceMappingURL=Model.js.map

@@ -39,3 +39,4 @@ var App;
     App.QueryService = QueryService;
     angular.module("app").service("QueryService", QueryService);
 })(App || (App = {}));
+//# sourceMappingURL=QueryService.js.map

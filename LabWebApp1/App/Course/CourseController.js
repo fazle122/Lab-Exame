@@ -22,3 +22,4 @@ var App;
     App.CourseController = CourseController;
     angular.module("app").controller("CourseController", CourseController);
 })(App || (App = {}));
+//# sourceMappingURL=CourseController.js.map

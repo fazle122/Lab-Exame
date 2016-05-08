@@ -26,6 +26,8 @@ module App {
                 self.loadUser();
             });
             self.Activate();
+            
+            
         }
 
         Activate() {
@@ -33,6 +35,7 @@ module App {
             var acc = self.authService.AccountInfo;
             if (acc && acc.IsAuth) {
                 self.loadUser();
+                self.IsSignedIn = true;
                 self.Routes = self.User.Routes;
             } else {
                 self.IsSignedIn = false;
@@ -49,7 +52,7 @@ module App {
                     }
                 }
             }
-
+            
             return false;
         }
 

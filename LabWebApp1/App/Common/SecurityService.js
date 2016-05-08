@@ -6,6 +6,7 @@ var App;
             this.Url = urlService;
             this.Web = webService;
             this.localStorageService = localStorageService;
+            this.LoadMenu();
         }
         AuthService.prototype.Signin = function (request) {
             var self = this;
@@ -33,11 +34,6 @@ var App;
             });
             return deffered.promise;
         };
-        //    }, error => {
-        //        deffered.reject(error);
-        //    });
-        //    return deffered.promise;
-        //}
         AuthService.prototype.Signout = function () {
             this.localStorageService.remove("authorizationData");
             this.AccountInfo = null;
@@ -56,7 +52,6 @@ var App;
         };
         AuthService.prototype.LoadMenu = function () {
             var self = this;
-            //self.AccountInfo.Routes = result.data.Routes;
             self.Web.Get(self.Url.MenuUrl).then(function (result) {
                 console.log(result);
                 self.AccountInfo.Routes = result.data;
@@ -108,3 +103,4 @@ var App;
     App.PermissionService = PermissionService;
     angular.module("app").service("permissionService", PermissionService);
 })(App || (App = {}));
+//# sourceMappingURL=SecurityService.js.map

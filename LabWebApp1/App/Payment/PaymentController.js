@@ -89,3 +89,4 @@ var App;
     App.PaymentController = PaymentController;
     angular.module("app").controller("PaymentController", PaymentController);
 })(App || (App = {}));
+//# sourceMappingURL=PaymentController.js.map

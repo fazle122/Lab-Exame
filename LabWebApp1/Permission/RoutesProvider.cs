@@ -37,7 +37,7 @@ namespace LabWebApp1.Permission
     {
         private static List<string> GetPublicList()
         {
-            //List<string> list = Enum.GetNames(typeof(PublicRoutes)).ToList();
+            
             List<string> list = new List<string>() { };
             return list;
         }

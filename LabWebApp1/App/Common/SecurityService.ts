@@ -2,10 +2,10 @@
 
     export class AuthService {
 
+        AccountInfo: AccountInfo;
         Q: angular.IQService;
         Url: UrlService;
         Web: WebService;
-        AccountInfo: AccountInfo;
         private localStorageService: angular.local.storage.ILocalStorageService;
 
 
@@ -16,6 +16,7 @@
             this.Url = urlService;
             this.Web = webService;
             this.localStorageService = localStorageService;
+            this.LoadMenu();
         }
 
         Signin(request: SigninRequest): angular.IPromise<AccountInfo> {
@@ -47,12 +48,6 @@
         }
 
 
-        //    }, error => {
-        //        deffered.reject(error);
-        //    });
-        //    return deffered.promise;
-        //}
-
         Signout(): void {
             this.localStorageService.remove("authorizationData");
             this.AccountInfo = null;
@@ -75,7 +70,6 @@
 
         LoadMenu(): void {
             var self = this;
-            //self.AccountInfo.Routes = result.data.Routes;
             self.Web.Get(self.Url.MenuUrl).then(result => {
                 console.log(result);
                 self.AccountInfo.Routes = result.data;

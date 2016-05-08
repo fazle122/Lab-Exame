@@ -75,21 +75,35 @@ var App;
             self.HttpService.delete(url).then(successCallBack, errorCallBack);
             return deffered.promise;
         };
+        //Get(url: string): angular.IPromise<any> {
+        //    var self = this;
+        //    var deffered = self.QService.defer();
+        //    var successCallBack = (result: any): any => {
+        //        if (result.status === 200) {
+        //            return deffered.resolve(result);
+        //        } else {
+        //            return deffered.reject(result);
+        //        }
+        //    }
+        //    var errorCallBack = error => {
+        //        return deffered.reject(error);
+        //    }
+        //    self.HttpService.get(url).then(successCallBack, errorCallBack);
+        //    return deffered.promise;
+        //}
         WebService.prototype.Get = function (url) {
             var self = this;
             var deffered = self.QService.defer();
-            var successCallBack = function (result) {
+            self.HttpService.get(url).then(function (result) {
                 if (result.status === 200) {
-                    return deffered.resolve(result);
+                    deffered.resolve(result);
                 }
                 else {
-                    return deffered.reject(result);
+                    deffered.reject(result);
                 }
-            };
-            var errorCallBack = function (error) {
-                return deffered.reject(error);
-            };
-            self.HttpService.get(url).then(successCallBack, errorCallBack);
+            }, function (error) {
+                deffered.reject(error);
+            });
             return deffered.promise;
         };
         WebService.$inject = ["$http", "$q"];
@@ -98,3 +112,4 @@ var App;
     App.WebService = WebService;
     angular.module("app").service("WebService", WebService);
 })(App || (App = {}));
+//# sourceMappingURL=WebService.js.map

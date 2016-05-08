@@ -103,24 +103,39 @@
         }
 
 
-        Get(url: string): angular.IPromise<any> {
+        //Get(url: string): angular.IPromise<any> {
 
+        //    var self = this;
+        //    var deffered = self.QService.defer();
+
+        //    var successCallBack = (result: any): any => {
+        //        if (result.status === 200) {
+        //            return deffered.resolve(result);
+        //        } else {
+        //            return deffered.reject(result);
+        //        }
+        //    }
+
+        //    var errorCallBack = error => {
+        //        return deffered.reject(error);
+        //    }
+
+        //    self.HttpService.get(url).then(successCallBack, errorCallBack);
+        //    return deffered.promise;
+        //}
+
+        Get(url: string): angular.IPromise<any> {
             var self = this;
             var deffered = self.QService.defer();
-
-            var successCallBack = (result: any): any => {
+            self.HttpService.get(url).then((result: any): any => {
                 if (result.status === 200) {
-                    return deffered.resolve(result);
+                    deffered.resolve(result);
                 } else {
-                    return deffered.reject(result);
+                    deffered.reject(result);
                 }
-            }
-
-            var errorCallBack = error => {
-                return deffered.reject(error);
-            }
-
-            self.HttpService.get(url).then(successCallBack, errorCallBack);
+            }, error => {
+                deffered.reject(error);
+            });
             return deffered.promise;
         }
 

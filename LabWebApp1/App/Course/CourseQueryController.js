@@ -28,3 +28,4 @@ var App;
     App.CourseQueryController = CourseQueryController;
     angular.module("app").controller("CourseQueryController", CourseQueryController);
 })(App || (App = {}));
+//# sourceMappingURL=CourseQueryController.js.map

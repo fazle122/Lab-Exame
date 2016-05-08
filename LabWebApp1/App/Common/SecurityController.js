@@ -15,6 +15,7 @@ var App;
             var successCallBack = function (response) {
                 self.stateService.go("root.home");
                 self.rootScopeService.$broadcast("SignIn");
+                console.log(response);
             };
             var errorCallBack = function (error) {
                 console.log(error);
@@ -60,7 +61,6 @@ var App;
             var acc = self.authService.AccountInfo;
             if (acc && acc.IsAuth) {
                 self.loadUser();
-                console.log(acc);
             }
             else {
                 self.IsSignedIn = false;
@@ -87,3 +87,4 @@ var App;
     App.NavController = NavController;
     angular.module("app").controller("NavController", NavController);
 })(App || (App = {}));
+//# sourceMappingURL=SecurityController.js.map

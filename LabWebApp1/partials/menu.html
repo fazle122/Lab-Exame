@@ -1,10 +1,9 @@
 ﻿<nav class="navbar navbar-default" role="navigation" ng-controller="MenuController as vm" ng-show="vm.IsSignedIn">
 
     <a ui-sref="root.studententry">Student Entry</a>
-    <a ui-sref="root.studentdetail">Student Details</a>
-    <a ui-sref="root.courseentry">Course Entry</a>
+    <a ng-show="vm.LoadSideMenu('studentdetail')" ui-sref="root.studentdetail">Student Details</a>
+    <a ng-show="vm.LoadSideMenu('courseentry')" ui-sref="root.courseentry">Course Entry</a>
     <a ui-sref="root.courselist">Course List</a>
-    <a ui-sref="root.payment">Payment</a>
-    <!--<a ng-show="vm.LoadSideMenu('payment')" ui-sref="root.payment">Payment</a>-->
+    <a ng-show="vm.LoadSideMenu('payment')" ui-sref="root.payment">payment</a>
         
 </nav>

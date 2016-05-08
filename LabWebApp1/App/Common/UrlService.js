@@ -25,3 +25,4 @@ var App;
     App.UrlService = UrlService;
     angular.module("app").service("UrlService", UrlService);
 })(App || (App = {}));
+//# sourceMappingURL=UrlService.js.map

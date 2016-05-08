@@ -24,6 +24,7 @@
             var successCallBack = (response: AccountInfo): void => {
                 self.stateService.go("root.home");
                 self.rootScopeService.$broadcast("SignIn");
+                console.log(response);
             }
 
             var errorCallBack = (error: any): void => {
@@ -90,7 +91,7 @@
             var acc = self.authService.AccountInfo;
             if (acc && acc.IsAuth) {
                 self.loadUser();
-                console.log(acc);
+                //console.log(acc);
             } else {
                 self.IsSignedIn = false;
             }

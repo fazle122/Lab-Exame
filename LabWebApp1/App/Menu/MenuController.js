@@ -23,6 +23,7 @@ var App;
             var acc = self.authService.AccountInfo;
             if (acc && acc.IsAuth) {
                 self.loadUser();
+                self.IsSignedIn = true;
                 self.Routes = self.User.Routes;
             }
             else {
@@ -52,3 +53,4 @@ var App;
     App.MenuController = MenuController;
     angular.module("app").controller("MenuController", MenuController);
 })(App || (App = {}));
+//# sourceMappingURL=MenuController.js.map

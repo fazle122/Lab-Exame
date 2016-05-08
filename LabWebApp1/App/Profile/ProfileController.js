@@ -40,3 +40,4 @@ var App;
     App.ProfileController = ProfileController;
     angular.module("app").controller("ProfileController", ProfileController);
 })(App || (App = {}));
+//# sourceMappingURL=ProfileController.js.map

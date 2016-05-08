@@ -14,3 +14,4 @@ var App;
     })(App.Entity);
     App.Course = Course;
 })(App || (App = {}));
+//# sourceMappingURL=Model.js.map

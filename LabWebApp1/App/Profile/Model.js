@@ -21,3 +21,4 @@ var App;
     })(App.Entity);
     App.ChangePasswordModel = ChangePasswordModel;
 })(App || (App = {}));
+//# sourceMappingURL=Model.js.map
